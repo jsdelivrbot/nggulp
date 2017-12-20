@@ -20,6 +20,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
     $scope.limit = 1000;
     $scope.isFormChecked = false;
     $scope.isReachLimit = 0;
+    $scope.host = 'http://localhost:9000';
 
 //===================================================functions==========================================================
     /**
@@ -101,7 +102,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
      *
      */
     $scope.getData = function (offset,limit) {
-        let url = `/account/getXAccounts/${offset}/${limit}`;
+        let url = `${$scope.host}/account/getXAccounts/${offset}/${limit}`;
         $http.get(url).then(rp =>{
             let gridData = rp.data;
             gridData.forEach(function (gdata, key) {
@@ -178,7 +179,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
      * @param id
      */
     $scope.getInserted  = function(id){
-        let url = "/account/api/getInserted/" + id;
+        let url = `${$scope.host}/account/api/getInserted/${id}`;
         return $http.get(url)
     };
 
@@ -188,7 +189,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
     $scope.add = function(){
         $scope.isFormChecked = true;
         if($scope.frmAccount.$valid){
-            let url = "/account/add";
+            let url = `${$scope.host}/account/add`;
             let data = $scope.accountForm;
             $http.post(url,data).then(rp =>{
                 if(rp.data.success==="1"){
@@ -238,7 +239,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
             limit = $scope.totalRows;
             $scope.isReachLimit = 1;
         }
-        let url = `/account/getXAccounts/${offset}/${limit}`;
+        let url = `${$scope.host}/account/getXAccounts/${offset}/${limit}`;
         $http.get(url).then(rp => {
             $scope.nextRecords =  rp.data;
         });
@@ -264,7 +265,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
      */
     $scope.genRecords = function(){
         let num2gen = $scope.num2gen;
-        let url = `/account/genRecords/${num2gen}`;
+        let url = `${$scope.host}/account/genRecords/${num2gen}`;
         $http.get(url).then(rp => {
             $scope.setNumRows();
         });
@@ -276,7 +277,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
      * get total num rows of all account table
      */
     $scope.getNumRows = function(){
-        let url = `/account/getNumRows`;
+        let url = `${$scope.host}/account/getNumRows`;
         return $http.get(url);
     };
 
@@ -305,7 +306,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
         let defer = $q.defer();
         if (file) {
             file.upload = Upload.upload({
-                url: '/account/upload',
+                url: `${$scope.host}/account/upload`,
                 data: {file: file}
             });
 

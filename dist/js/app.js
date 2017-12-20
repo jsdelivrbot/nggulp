@@ -3,7 +3,16 @@
 /**
  * @author: phuongds
  */
-let app = angular.module('app', ['ui.grid','ui.grid.selection', 'ui.grid.cellNav','ui.grid.exporter','ui.grid.pagination','ngStorage','ngFileUpload']);
+let app = angular.module('app', ['ui.grid','ui.grid.selection', 'ui.grid.cellNav','ui.grid.exporter','ui.grid.pagination','ngStorage','ngFileUpload','ngRoute']);
+app.config([
+  '$routeProvider',
+  function($routeProvider){
+    $routeProvider.when('/',{
+      templateUrl : 'views/account/list.html',
+      controller: 'AccountController'
+    })
+  }
+]);
 app.filter('mapGender', function () {
     let hash = {
         '1': "male",

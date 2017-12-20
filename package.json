@@ -4,12 +4,22 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "angular-ui-grid": "^4.1.0",
     "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "angularjs": "0.0.1",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.19.0",
     "event-stream": "^3.3.4",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.2.1",
+    "ng-file-upload": "^12.2.13",
+    "ngstorage": "^0.3.11",
+    "ui-grid": "0.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
