@@ -48047,7 +48047,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 })(window, window.angular);
 
 /*!
- * ui-grid - v4.1.0 - 2017-12-18
+ * ui-grid - v4.1.1 - 2017-12-20
  * Copyright (c) 2017 ; License: MIT 
  */
 

@@ -16,6 +16,7 @@ const pathHtml = './dist/';
 const pathImg = './dist/img';
 const pathCss = './dist/css';
 const pathJs = './dist/js';
+const pathFont = './dist/fonts';
 //js, css dependencies files after concat
 const jsLibsFile = 'libs.js';
 const cssLibsFile = 'libs.css';
@@ -63,6 +64,12 @@ gulp.task('copyCss',function(){
         stream: true
       }))
 })
+//copy fonts
+gulp.task('copyFont',function(){
+  return gulp.src('./src/css/fonts/*.*')
+      .pipe(gulp.dest(pathFont))
+})
+
 //copy js
 gulp.task('copyJs',function(){
   gulp.src(srcJs)
@@ -72,7 +79,7 @@ gulp.task('copyJs',function(){
       }))
 })
 gulp.task('build',function(){
-  gulp.start(['concatCssLibs','concatJsLibs','copyHtml','copyImg','copyCss','copyJs'])
+  gulp.start(['concatCssLibs','concatJsLibs','copyHtml','copyImg','copyCss','copyJs','copyFont'])
 });
 //automatic reload on browser
 gulp.task('browser-sync',function(){

@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "angular": "^1.6.7",
     "angular-route": "^1.6.7",
-    "angular-ui-grid": "^4.1.0",
-    "gulp": "^3.9.1"
-  },
-  "devDependencies": {
+    "angular-ui-grid": "^4.1.1",
     "angularjs": "0.0.1",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.19.0",
     "event-stream": "^3.3.4",
+    "fontawesome": "^4.7.2",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
