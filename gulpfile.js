@@ -91,21 +91,6 @@ gulp.task('browser-sync',function(){
     }
   })
 });
-//run this at the begining
-gulp.task('start',function(){
-  devMode = true;
-  gulp.start(['build','browser-sync']);
-  gulp.watch([srcCss],['concatCssLibs','copyCss']);
-  gulp.watch([srcJs],['concatJsLibs','copyJs']);
-  gulp.watch([srcHtml],['copyHtml']);
-  gulp.watch([srcImg],['copyImg']);
-});
-gulp.task('heroku', function() {
-  connect.server({
-    root: './dist',
-    livereload: false
-  });
-});
 gulp.task('minify',function(){
   return gulp.src('src/js/**/*.js')
   .pipe(concat('app.min.js'))
@@ -113,4 +98,22 @@ gulp.task('minify',function(){
       console.log(e);
    }))
   .pipe(gulp.dest('./dist/js'));
+});
+
+//===================================exe========================================
+//run devMode environment
+gulp.task('rundevmode',function(){
+  devMode = true;
+  gulp.start(['build','browser-sync']);
+  gulp.watch([srcCss],['concatCssLibs','copyCss']);
+  gulp.watch([srcJs],['concatJsLibs','copyJs']);
+  gulp.watch([srcHtml],['copyHtml']);
+  gulp.watch([srcImg],['copyImg']);
+});
+//run prod environment
+gulp.task('runprodmode', function() {
+  connect.server({
+    root: './dist',
+    livereload: false
+  });
 });
