@@ -99,7 +99,13 @@ gulp.task('start',function(){
   gulp.watch([srcHtml],['copyHtml']);
   gulp.watch([srcImg],['copyImg']);
 });
-
+gulp.task('serveprod', function() {
+  connect.server({
+    root: './dist',
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
+});
 gulp.task('minify',function(){
   return gulp.src('src/js/**/*.js')
   .pipe(concat('app.min.js'))
