@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "angular": "^1.6.7",
     "angular-route": "^1.6.7",
     "angular-ui-grid": "^4.1.1",
