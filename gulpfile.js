@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const es = require('event-stream');
@@ -99,10 +100,9 @@ gulp.task('start',function(){
   gulp.watch([srcHtml],['copyHtml']);
   gulp.watch([srcImg],['copyImg']);
 });
-gulp.task('serveprod', function() {
+gulp.task('heroku', function() {
   connect.server({
     root: './dist',
-    port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
 });
