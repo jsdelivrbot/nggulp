@@ -26,6 +26,9 @@
     "start": "node app",
     "postinstall": "gulp heroku"
   },
+  "engines": {
+    "node": "v8.5.0"
+  },
   "author": "",
   "license": "ISC"
 }
