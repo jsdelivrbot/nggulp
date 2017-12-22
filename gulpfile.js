@@ -102,7 +102,7 @@ gulp.task('minify',function(){
 
 //===================================exe========================================
 //run devMode environment
-gulp.task('rundevmode',function(){
+gulp.task('local',function(){
   devMode = true;
   gulp.start(['build','browser-sync']);
   gulp.watch([srcCss],['concatCssLibs','copyCss']);
@@ -111,7 +111,7 @@ gulp.task('rundevmode',function(){
   gulp.watch([srcImg],['copyImg']);
 });
 //run prod environment
-gulp.task('runprodmode', function() {
+gulp.task('heroku', function() {
   connect.server({
     root: './dist',
     livereload: false

@@ -20,7 +20,7 @@ let AccountController = function ($log, $scope, $q, $http, $filter, $timeout, i1
     $scope.limit = 1000;
     $scope.isFormChecked = false;
     $scope.isReachLimit = 0;
-    $scope.host = 'http://localhost:9000';
+    $scope.host = 'https://playscang.herokuapp.com';
 
 //===================================================functions==========================================================
     /**

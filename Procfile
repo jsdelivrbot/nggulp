@@ -1,1 +1,1 @@
-web: node node_modules/gulp/bin/gulp runprodmode
+web: node node_modules/gulp/bin/gulp heroku
